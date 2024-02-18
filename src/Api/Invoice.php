@@ -165,6 +165,24 @@ class Invoice extends ApiClient
         return $sevInvoice;
     }
 
+    // =========================== create reminder ====================================
+
+    /**
+     * Create invoice.
+     *
+     * @param $invoiceId
+     * @return array
+     * @throws Exception
+     */
+    public function createReminder($invoiceId): array
+    {
+        return $this->_post(Routes::CREATE_REMINDER, [
+            'invoice' => [
+                'id' => $invoiceId,
+                "objectName" => "Invoice"
+            ]
+        ]);
+    }
 
     // =======================================================================
 
