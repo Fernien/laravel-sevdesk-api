@@ -63,16 +63,6 @@ class Invoice extends ApiClient
     }
 
     /**
-     * Return all due invoices.
-     *
-     * @return Collection
-     */
-    public function allOpen(): Collection
-    {
-        return Collection::make($this->_get(Routes::INVOICE, ['status' => self::OPEN, 'delinquent' => true]));
-    }
-    
-    /**
      * Return all payed invoices.
      *
      * @return Collection
