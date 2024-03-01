@@ -168,7 +168,7 @@ class Invoice extends ApiClient
     // =========================== create reminder ====================================
 
     /**
-     * Create invoice.
+     * Create invoice reminder.
      *
      * @param $invoiceId
      * @return array
