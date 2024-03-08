@@ -56,7 +56,7 @@ $sevdeskApi->invoice()->allByContact($contactId);
 ```
 
 Um Rechnungen vor oder nach einem bestimmten Datum zu filtern rufe entweder die `allBefor()` oder die `allAfter()`
-Funktion auf mit dem jeweiligen Zeitstempel `$timestamp` als Parameter. Mit der `allBetween()` Funktion ist es möglich 
+Funktion auf mit dem jeweiligen Zeitstempel `$timestamp` als Parameter. Mit der `allBetween()` Funktion ist es möglich
 nach einem bestimmten Zeitraum zu filtern.
 
 ```php
@@ -80,11 +80,19 @@ $items = [
     [
         'name' => 'Server Hosting',
         'Preis' => 10,
-        'quantity' => 5 // (optional) standardmäßig ist es 1 
+        'quantity' => 5 // (optional) standardmäßig ist es 1
         'text' => 'Wordpress Server' // (optional) Beschreibung unter dem Namen
     ],
 ]
 $sevdeskApi->invoice()->create($customerId, $items, $parameters);
+```
+
+## Zahlungserinnerung erstellen
+
+Um eine Zahlungserinnerung zu erstellen, verwende die Funktion `createReminder()` und übergebe die SevDesk `invoiceId`.
+
+```php
+$sevdeskApi->invoice()->createReminder($invoiceId);
 ```
 
 ## Rechnung herunterladen

@@ -79,11 +79,19 @@ $items = [
     [
         'name' => 'Server Hosting',
         'price' => 10,
-        'quantity' => 5                 // (optional) by default it's 1 
+        'quantity' => 5                 // (optional) by default it's 1
         'text' => 'Wordpress Server'    // (optional) description below name
     ],
 ]
 $sevdeskApi->invoice()->create($customerId, $items, $parameters);
+```
+
+## Create Reminder
+
+To create an invoice use the `createReminder()` function and pass the SevDesk `invoiceId`.
+
+```php
+$sevdeskApi->invoice()->createReminder($invoiceId);
 ```
 
 ## Download Invoice
